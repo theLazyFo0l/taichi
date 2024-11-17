@@ -246,7 +246,7 @@ def step():
 
 Merely revising the place statement is sufficient to change the layout. With this optimization, the instant elements `pos[i]` and `vel[i]` are now adjacent in memory, which is more efficient.
 
-<!-- ```python
+```python
 # SoA version
 N = 200000
 pos = ti.field(ti.f32)
@@ -282,7 +282,7 @@ locality and poor performance. A better way is to place them together:
 ti.root.dense(ti.i, N).place(pos, vel)
 ```
 
-Then `vel[i]` is placed right next to `pos[i]`, which can increase spatial
+<!-- Then `vel[i]` is placed right next to `pos[i]`, which can increase spatial
 locality and therefore improve performance. -->
 
 <!-- For example, the following places two 1D fields of shape `3` together, which
